@@ -5,11 +5,11 @@ from scipy.stats import norm
 import csv
 
 
-ifile  = open('file_directory', "rb")
-reader = csv.reader(ifile,delimiter=',')
+ifile  = open('file_directory', "rb")   # reads a column of data from directed path
+reader = csv.reader(ifile,delimiter=',')    # column separator (could be others ; :)
 
-header = reader.next()
-column = header.index("column_title")
+header = reader.next()                  # read first row as title
+column = header.index("column_title")   # input column
 
 x = []               # This loop is to remove any unwanted elements
 for row in reader:
