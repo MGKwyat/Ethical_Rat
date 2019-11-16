@@ -87,7 +87,7 @@ for f in spe_stars_data:
 	a1.append(x1)
 	b1.append(y1)
 
-
+INPUT FILE
 column1;2;3;4
 xmin;xmax;ymin;ymax;xscale;yscale
 azin/home/filename;2;3;
