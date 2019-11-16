@@ -90,8 +90,8 @@ for f in spe_stars_data:
 INPUT FILE
 column1;2;3;4
 xmin;xmax;ymin;ymax;xscale;yscale
-azin/home/filename;2;3;
-legend;symbol;color;2;3;repete
+azin/home/filename;azin/home/filename2;azin/home/filename
+legend;symbol;color;legend2;symbol2;color2
 special_file1;special_file2;
 
 SPECIAL FILE
