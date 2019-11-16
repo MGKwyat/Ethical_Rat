@@ -45,13 +45,11 @@ for f in file_path:
     yscale_factor = float(axes_scale[5])
     x = x1 * xscale_factor
     y = y1 * yscale_factor
-    	a.append(x)
-    	b.append(y)
-    	all_data.append(removed)
-   	 
-   	 
-	plt.xlabel(numerator + ' / ' + denominator[10] + '  scaled by ' + axes_scale[4])
-	plt.ylabel(fuvnuv1 + ' / ' + fuvnuv2 + '  yscaled by ' + axes_scale[5])
+    a.append(x)
+    b.append(y)
+    all_data.append(removed)
+    plt.xlabel(numerator + ' / ' + denominator[10] + '  scaled by ' + axes_scale[4])
+    plt.ylabel(fuvnuv1 + ' / ' + fuvnuv2 + '  yscaled by ' + axes_scale[5])
     
 
 spe_stars, spe_scale = [], []
@@ -89,5 +87,18 @@ for f in spe_stars_data:
 	a1.append(x1)
 	b1.append(y1)
 
+
+column1;2;3;4
+xmin;xmax;ymin;ymax;xscale;yscale
+azin/home/filename;2;3;
+legend;symbol;color;2;3;repete
+special_file1;special_file2;
+
+SPECIAL FILE
+Star;scale
+CI Hyi;1
+--;1
+----;2
+----;1.5
 
 
