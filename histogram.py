@@ -1,39 +1,30 @@
 import numpy as np
 import matplotlib.mlab as mlab
 import matplotlib.pyplot as plt
+import csv, sys
 from scipy.stats import norm
-import csv
 
+ifile  = open(sys.argv[1], "rb")
+reader = csv.reader(ifile,delimiter=';')
 
-ifile  = open('file_directory', "rb")   # reads a column of data from directed path
-reader = csv.reader(ifile,delimiter=',')    # column separator (could be others ; :)
+header = reader.next()
+header = [x.strip(' ') for x in header]
+column = header.index(sys.argv[2])
 
-header = reader.next()                  # read first row as title
-column = header.index("column_title")   # input column
-
-x = []               # This loop is to remove any unwanted elements
+y0 = []
 for row in reader:
     col = row[column]
-    x.append(col)
-nan = 'str_to_remove'
-y0 = [i for i in x if nan not in i]
+    y0.append(col)
+nan = 'nan'
+y0 = [i for i in y0 if nan not in i]
 
+y = list(map(float, y0))
 
-y = list(map(float, y0))    # convert list to float
-
-print('y:', y)              # data details
-print('#_elements', len(y0))
 max_value = max((y))
 min_value = min((y))
-num_bins =  20              # numbers of bin decide accuracy of distrubution
+print(len(y))
 
-
-print('max_value:', max_value)
-print('min_value:', min_value)
-print('num_bins:', num_bins)
-
-n,bins,patches = plt.hist(y, num_bins, facecolor='blue', label= 'data_label')
-plt.xlabel('x_axis')
-plt.ylabel('y_axis')
-plt.legend()
+n,bins,patches = plt.hist(y,int(sys.argv[3]), facecolor='blue')
+plt.xlabel(sys.argv[2])
+plt.ylabel('y_axin label')
 plt.show()
